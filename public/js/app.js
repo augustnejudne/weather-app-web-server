@@ -19,12 +19,13 @@ myForm.addEventListener('submit', e => {
   myForecastSummary.innerHTML = 'loading...';
   fetch(`/weather?address=${mySearchInput.value}`).then(response => {
     response.json().then(data => {
-      const { summary, temperature, precipProbability, location } = data;
+      const { summary, temperature, precipProbability, location, response } = data;
+      console.log(response);
       if (data.error) {
         myForecastSummary.textContent = data.error;
         return;
       }
-      myForecastSummary.textContent = `${summary} It is ${temperature} degrees celsius in ${location} with ${(precipProbability * 100).toFixed(2)}% chance of rain.`;
+      myForecastSummary.textContent = `${summary} It is ${temperature} degrees celsius in ${location} with ${parseInt(precipProbability * 100)}% chance of rain.`;
       return;
     });
   });

@@ -18,6 +18,7 @@ const getDarksky = (address, callback) => {
       temperature: response.body.currently.temperature,
       precipProbability: response.body.currently.precipProbability,
       location: address.location,
+      response,
     });
     return;
   });

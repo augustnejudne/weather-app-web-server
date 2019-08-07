@@ -11,12 +11,12 @@ const getWeather = (address, callback) => {
       callback(error, undefined);
       return;
     }
-    getDarksky(geoCodeData, (error, { summary, temperature, precipProbability, location }) => {
+    getDarksky(geoCodeData, (error, { summary, temperature, precipProbability, location, response }) => {
       if (error) {
         callback(error, undefined);
         return;
       }
-      callback(undefined, { summary, temperature, precipProbability, location});
+      callback(undefined, { summary, temperature, precipProbability, location, response });
       return;
     });
   });
