@@ -24,7 +24,7 @@ myForm.addEventListener('submit', e => {
         myForecastSummary.textContent = data.error;
         return;
       }
-      myForecastSummary.textContent = `${summary} It is ${temperature} degrees celsius in ${location} with ${precipProbability * 100} percent change of rain.`;
+      myForecastSummary.textContent = `${summary} It is ${temperature} degrees celsius in ${location} with ${(precipProbability * 100).toFixed(2)}% chance of rain.`;
       return;
     });
   });

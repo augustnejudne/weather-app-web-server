@@ -4,7 +4,7 @@ const hbs = require('hbs');
 const getWeather = require('./functions/weather/getWeather');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // define paths for express config
 const publicPath = path.join(__dirname, '../public');
