@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+{{>head}}
+<body>
+  <div class="main-content">
+    {{>header}}
+    <h3>by {{name}}</h3>
+    <p>Use this site to fetch the weather.</p>
+    <form id="myForm" action="">
+      <input type="text" id="mySearchInput" autofocus>
+      <input type="submit" id="mySearchInputSubmitButton" value="Search">
+    </form>
+    <h2 id="myForecastSummary"></h2>
+  </div>
+  {{>footer}}
+</body>
+</html>
